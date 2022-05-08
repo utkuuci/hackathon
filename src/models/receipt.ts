@@ -31,13 +31,9 @@ const receiptSchema = new Schema({
         required: true,
         type: Number
     },
-    totalSum: {
-        required: true,
-        type: Number
-    },
     payment: {
         required: true,
-
+        type: String
     }
 });
 
