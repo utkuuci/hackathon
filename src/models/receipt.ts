@@ -3,40 +3,40 @@ var { Schema }: any = mongoose;
 
 const receiptSchema = new Schema({
     date: {
-        require: true,
+        required: true,
         type: Date,
         default: Date.now,
     },
     shopId: {
-        require: true,
+        required: true,
         type: {
             type: Schema.Types.ObjectId, ref: "Shop"
         }
     },
     userId: {
-        require: true,
+        required: true,
         type: {
             type: Schema.Types.ObjectId, ref: "User"
         }
     },
     products: {
-        require: true,
+        required: true,
         type: [{ type: Schema.Types.ObjectId, ref: 'Product' }]
     },
     totalprice: {
-        require: true,
+        required: true,
         type: Number
     },
     totalTax: {
-        require: true,
+        required: true,
         type: Number
     },
     totalSum: {
-        require: true,
+        required: true,
         type: Number
     },
     payment: {
-        require: true,
+        required: true,
 
     }
 });

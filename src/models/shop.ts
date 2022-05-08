@@ -3,35 +3,35 @@ var { Schema } = mongoose;
 
 const shopSchema = new Schema({
     name: {
-        require: true,
+        required: true,
         type: String
     },
     email: {
-        require: true,
+        required: true,
         type: String,
     },
     password: {
-        require: true,
+        required: true,
         type: String
     },
     province: {
-        require: true,
+        required: true,
         type: String
     },
     city: {
-        require: true,
+        required: true,
         type: String
     },
     neighbourhood: {
-        require: true,
+        required: true,
         type: String
     },
     street: {
-        require: true,
+        required: true,
         type: String
     },
     buildingNo: {
-        require: true,
+        required: true,
         type: String
     },
 });

@@ -3,25 +3,25 @@ var { Schema }: any = mongoose;
 
 const productSchema = new Schema({
     name: {
-        require: true,
+        required: true,
         type: String,
     },
     category: {
-        require: true,
+        required: true,
         type: String,
     },
     price: {
-        require: true,
+        required: true,
         type: Number
     },
     taxRatio: {
-        require: true,
+        required: true,
         type: Number
     },
     imagePath: {
-        require: true,
+        required: true,
         type: String
     }
 });
 
-module.exports = mongoose.model('Product', receiptSchema);
+module.exports = mongoose.model('Product', productSchema);

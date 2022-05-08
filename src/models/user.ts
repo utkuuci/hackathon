@@ -3,19 +3,19 @@ var { Schema } = mongoose;
 
 const userSchema = new Schema({
     name: {
-        require: true,
+        required: true,
         type: String
     },
     lastName: {
-        require: true,
+        required: true,
         type: String,
     },
     email: {
-        require: true,
+        required: true,
         type: String,
     },
     password: {
-        require: true,
+        required: true,
         type: String
     }
 });

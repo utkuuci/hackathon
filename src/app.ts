@@ -10,6 +10,7 @@ const path = require('path');
 const receiptRoutes = require('./routers/receipt');
 const userRoutes = require('./routers/user');
 const shopRoutes = require('./routers/shop');
+const productRoutes = require('./routers/product');
 // Database
 const db = require('./db');
 
@@ -17,8 +18,10 @@ dotenv.config();
 db();
 const app = express();
 
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+app.use('/uploads', express.static('uploads'));
 // Protection
 app.use(helmet());
 // Logging to console
@@ -28,7 +31,7 @@ app.use(morgan('tiny'));
 app.use("/api/v1/receipt", receiptRoutes);
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/shop", shopRoutes);
-// app.use("/api/v1/product");
+app.use("/api/v1/product", productRoutes);
 
 
 // Listen
