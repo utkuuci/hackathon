@@ -3,7 +3,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap'
 
 function NavbarComp() {
   return (
-        <Navbar bg="dark" variant="dark">
+      <Navbar bg="dark" variant="dark">
         <Container>
             <Navbar.Brand href="#home">QR Receipt</Navbar.Brand>
             <Nav className="me-auto">
