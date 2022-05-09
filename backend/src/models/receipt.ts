@@ -9,19 +9,18 @@ const receiptSchema = new Schema({
     },
     shopId: {
         required: true,
-        type: {
-            type: Schema.Types.ObjectId, ref: "Shop"
-        }
+        type: mongoose.Types.ObjectId,
+        ref: "Shop"
     },
     userId: {
         required: true,
-        type: {
-            type: Schema.Types.ObjectId, ref: "User"
-        }
+        type: mongoose.Types.ObjectId,
+        ref: "User"
     },
     products: {
         required: true,
-        type: [{ type: Schema.Types.ObjectId, ref: 'Product' }]
+        type: [mongoose.Types.ObjectId],
+        ref: 'Product'
     },
     totalprice: {
         required: true,
@@ -35,6 +34,6 @@ const receiptSchema = new Schema({
         required: true,
         type: String
     }
-});
+}, { timestamps: true, versionKey: false });
 
 module.exports = mongoose.model('Receipt', receiptSchema);

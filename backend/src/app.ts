@@ -5,7 +5,7 @@ const helmet = require('helmet');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 // Node Libs
-const path = require('path');
+var path = require('path');
 // Routes.
 const receiptRoutes = require('./routers/receipt');
 const userRoutes = require('./routers/user');
@@ -32,7 +32,6 @@ app.use("/api/v1/receipt", receiptRoutes);
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/shop", shopRoutes);
 app.use("/api/v1/product", productRoutes);
-
 
 // Listen
 app.listen(3000, () => {

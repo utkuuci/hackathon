@@ -34,6 +34,6 @@ const shopSchema = new Schema({
         required: true,
         type: String
     },
-});
+}, { timestamps: true, versionKey: false });
 
 module.exports = mongoose.model('Shop', shopSchema);
