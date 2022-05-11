@@ -34,6 +34,6 @@ app.use("/api/v1/shop", shopRoutes);
 app.use("/api/v1/product", productRoutes);
 
 // Listen
-app.listen(3000, () => {
-    console.log('Server started on port 3000');
+app.listen(4000, () => {
+    console.log('Server started on port 4000');
 });

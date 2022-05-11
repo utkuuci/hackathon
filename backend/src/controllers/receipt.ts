@@ -1,7 +1,3 @@
-import { rejects } from "assert";
-import { array } from "joi";
-import { resolve } from "path";
-
 var fs = require('fs')
 var httpStatus = require('http-status');
 var Jimp = require("jimp");
@@ -43,6 +39,17 @@ const readQr = async (filepath: string) => {
         qr.callback = (err: any, v: any) => err != null ? reject(err) : resolve(JSON.parse(v));
         qr.decode(img.bitmap);
     });
+    // try {
+    //     const img = await Jimp.read(fs.readFileSync(filepath));
+    //     const qr = new qrCode();
+    //     return await new Promise((resolve, reject) => {
+    //         qr.callback = (err: any, v: any) => err != null ? reject(err) : resolve(JSON.parse(v));
+    //         qr.decode(img.bitmap);
+    //     })
+    // }
+    // catch (e: any) {
+    //     console.log(e);
+    // }
 }
 
 
@@ -64,7 +71,7 @@ module.exports.ReadQrImage = async (req: any, res: any) => {
         .then(data => {
             console.log(data);
         })
-        .catch(console.log);
+        .catch(console.log)
 }
 module.exports.GenerateQrImage = async (req: any, res: any) => {
     const istrue = await generateQR(JSON.stringify(req.body));
