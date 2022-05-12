@@ -1,8 +1,6 @@
 var httpStatus = require('http-status');
 var Product: any = require('../models/product');
 
-
-
 module.exports.GetProduct = async (_: any, res: any) => {
     var product = await Product.find();
     return res.status(httpStatus.OK).send(product);
@@ -18,8 +16,14 @@ module.exports.CreateProduct = async (req: any, res: any) => {
         taxRatio: parseInt(req.body.taxRatio),
         imagePath: req.file.filename
     }
-    console.log(body)
-    // var product = new Product(req.body);
-    // await product.save()
+    console.log(body);
+    var product = new Product(body);
+    await product.save()
     return res.status(httpStatus.CREATED).send(body);
 }
+
+module.exports.GetSingleProduct = async (req: any, res: any) => {
+    const product = await Product.findOne({ _id: req.params.id });
+    res.status(httpStatus.OK).send(product);
+}
+

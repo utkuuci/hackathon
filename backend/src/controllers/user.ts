@@ -12,3 +12,7 @@ module.exports.CreateUser = async (req: any, res: any) => {
     await newUser.save();
     return res.status(httpStatus.CREATED).send(user);
 }
+module.exports.GetSingleUser = async (req: any, res: any) => {
+    var user = await User.findOne({ _id: req.params.id });
+    return res.status(httpStatus.OK).send(user);
+}

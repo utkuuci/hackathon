@@ -6,5 +6,6 @@ router
     .route("/")
     .get(userController.GetUser)
     .post(userController.CreateUser);
+router.route("/:id").get(userController.GetSingleUser);
 
 module.exports = router;

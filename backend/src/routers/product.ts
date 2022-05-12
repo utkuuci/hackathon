@@ -27,5 +27,7 @@ var upload = multer({
 router.route('/')
     .get(productController.GetProduct)
     .post(upload.single('productImage'), productController.CreateProduct)
+router.route('/:id').get(productController.GetSingleProduct)
+
 
 module.exports = router;
