@@ -6,11 +6,11 @@ const ReceiptUser = () => {
   const [receipts, setReceipts] = useState([]);
   const handleInput = async (e) => {
     e.preventDefault();
-    await axios.get(`http://localhost:4000/api/v1/receipt/user/${userId}`)
-      .then(res => {
-        console.log(res.data);
-        setReceipts(res.data);
-      });
+    // await axios.get(`http://localhost:4000/api/v1/receipt/user/${userId}`)
+    //   .then(res => {
+    //     console.log(res.data);
+    //     setReceipts(res.data);
+    //   });
   }
   return (
     <Container>
@@ -23,7 +23,7 @@ const ReceiptUser = () => {
           Find User
         </Button>
       </Form>
-      {receipts.map(receipt => {
+      {/* {receipts.map(receipt => {
         return (
           <Card key={receipt._id} style={{ height: "250px", width: "300px", margin: "5%" }}>
             <Card.Img variant="top" height={"100px"} src={receipt.url} />
@@ -33,7 +33,7 @@ const ReceiptUser = () => {
             </Card.Body>
           </Card>
         )
-      })}
+      })} */}
     </Container>
   )
 }

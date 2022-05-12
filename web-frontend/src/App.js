@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<ReceiptList props={receipts} />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/user" element={<User />} />
-        <Route path="/receipts/user" element={<ReceiptUser />} />
+        <Route path="/receipt/user" element={<ReceiptUser />} />
       </Routes>
     </div >
   );

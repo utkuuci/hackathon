@@ -8,7 +8,7 @@ function NavbarComp() {
         <Navbar.Brand href="/">QR Receipt</Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/receipts/user">Receipts</Nav.Link>
+          <Nav.Link href="/receipt/user">Receipts</Nav.Link>
         </Nav>
       </Container>
     </Navbar>
